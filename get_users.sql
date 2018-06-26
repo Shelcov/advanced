@@ -1,0 +1,1 @@
+SELECT r.* FROM (SELECT ROW_NUMBER() OVER (PARTITION BY group_id ORDER BY register_date DESC) AS row, u.* FROM users u) r WHERE r.row <= 2;
